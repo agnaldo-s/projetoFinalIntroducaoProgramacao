@@ -1,3 +1,4 @@
+#! python3.10.5
 from ast import Return
 from secrets import choice
 import sqlite3
@@ -30,6 +31,10 @@ def sim_nao(txt):
                 print("\nInforme somente (S/N)\n")  
 def sair():
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     print("\nEncerrando o programa em",end=" ")
     for b in range(3,0,-1): 
         print(f"\033[1;3{b}m{b} \033[m",end=" ")
@@ -169,6 +174,10 @@ def verificar_email():
     return email
 def cadastro():
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     confirmSenha = False
     cabecario("CADASTRO")
     nome =not_vazio("Nome").title()
@@ -188,6 +197,10 @@ def cadastro():
     menu_principal()
 def menu_principal():    
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     cabecario("GERADOR DE SENHAS")
     print("\n","_"*49)
     while True:
@@ -231,7 +244,12 @@ def loca_nome(username):
             return data[0][0]
 def menu_senhas(id,nome_usuario,senha):
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     print(f"\n\nBem vindo {nome_usuario}!!\n")
+    time.sleep(3)
     cabecario("MENU")
     while True:
         print("\nO que você quer fazer?\n ")
@@ -261,6 +279,10 @@ def login():
     # retorna id de cadastro, username e senha
     
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     cont = False
     query = f"""
             SELECT username
@@ -310,6 +332,10 @@ def login():
 def gerador_senha(id,nome_usuario,senha_usuario):
     import string
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     from random import random
     while True:
         carac = ""
@@ -431,6 +457,10 @@ def gerador_senha(id,nome_usuario,senha_usuario):
                 time.sleep(2)
 def verificar_nome_senhas(id,nome_usuario,senha):
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     nome=encotrar_nome_senhas(id)
     cabecario("CONSULTA NOME DE SENHAS SALVAS")
     if nome != []:        
@@ -461,6 +491,10 @@ def verificar_nome_senhas(id,nome_usuario,senha):
                 time.sleep(2)
 def consulta_senha(id,nome_usuario,senha):
     import time
+    import os
+    
+    time.sleep(3)
+    os.system('clear')
     while True:
         cabecario ("CONSULTA DE SENHA")
         nome_senha= not_vazio(f"{nome_usuario}, informe o nome que a senha foi armazenada").title()
@@ -475,7 +509,7 @@ def consulta_senha(id,nome_usuario,senha):
                         while True:
                             print("O que deseja fazer agora?\n")
                             opcao(1,"Consultar outra senha")
-                            opcao(2,"Retornar ao menu principa")
+                            opcao(2,"Retornar ao menu principal")
                             resp = not_vazio("")
                             match resp:
                                 case "1":
