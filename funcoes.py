@@ -1,4 +1,4 @@
-#! python3.10.5
+#! python3.10
 from ast import Return
 from secrets import choice
 import sqlite3
